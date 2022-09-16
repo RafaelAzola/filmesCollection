@@ -7,7 +7,20 @@
                 <h4>Collection</h4>
             </div>
         </div>
-        <h2 id="headerTexto">Conheça nossa Coletânia</h2>
+        <!-- Muda o texto do header de acordo com a rota -->
+        <ng-container *ngIf="router.routerState.snapshot.url == '/home'">
+            <h2 id="headerTexto">Conheça nossa Coletânia</h2>
+        </ng-container>
+        <ng-container *ngIf="router.routerState.snapshot.url == '/usuarios'">
+            <h2 id="headerTexto">Faça o Cadastro de usuários e edite, caso necessario</h2>
+            <h2 id="headerSubTexto">Pronto para cadastrar?</h2>
+        </ng-container>
+        <ng-container *ngIf="router.routerState.snapshot.url == '/filmes'">
+            <h2 id="headerTexto">Cadastre os filmes de sua preferência</h2>
+        </ng-container>
+        <ng-container *ngIf="router.routerState.snapshot.url == '/genero'">
+            <h2 id="headerTexto">Cadastre os gêneros dos filmes</h2>
+        </ng-container>
     </div>
     <ul id="menu">
         <li><a routerLink="../home">Home</a></li>

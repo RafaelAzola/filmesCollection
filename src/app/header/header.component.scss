@@ -8,11 +8,10 @@ header{
     width: 100%;
     margin: auto;
     display: flex;
-    justify-content: center;
 }
 #headerDiv{
-    margin: auto;
     margin-bottom: 30px;
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
@@ -43,6 +42,12 @@ header{
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 25px;
+    margin-bottom: 0px;
+}
+#headerSubTexto{
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 22px;
     margin-bottom: 0px;
 }
 #menu{
