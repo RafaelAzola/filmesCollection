@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+main{
+    width: 100%;
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    min-height: 50em;
+}
+h1{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 70px;
+}
+#homeSection1{
+    margin: auto;
+    width: 1024px;
+}
+#homeSection1 article{
+    height: 112px;
+    font-size: 14px;
+}
+#homeSubtitulo{
+    font-size: 24px;
+}
+#homeSection2{
+    margin: auto;
+    width: 1024px;
+    display: flex;
+    justify-content: space-between;
+}
+.homeCard{
+    width: 400px;
+}
+.homeCard h3{
+    font-size: 24px;
+}
+.homeCard span{
+    font-size: 14px;
+}

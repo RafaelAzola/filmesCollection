@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+footer{
+    width: 100%;
+    height: 250px;
+    background-color: #f6511d;
+    color: white;
+    display: flex;
+}
+footer h2{
+    font-weight: 400;
+    font-size: 30px;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+footer h4{
+    font-family: 'Rosarivo';
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 0px;
+}
+footer hr{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 200px;
+    border: 1px solid;
+}
+footer span{
+    margin: auto;
+    margin-left: 0px;
+}
+#footerLogo{
+    margin: auto;
+    margin-top: 3%;
+    margin-right: 2%;
+    display: flex;
+}
+#footerLogo img{
+    margin-right: 15px;
+}
+#footerInfo{
+    margin: auto;
+    margin-left: 2%;
+    width: 450px;
+    height: 145px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+main{
+    width: 100%;
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    min-height: 50em;
+}
+#userSection1{
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#userSection1 h3{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+#cadastro{
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+#cadastro div{
+    display: flex;
+    flex-direction: column;
+}
+#cadastro label{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#cadastro input{
+    font-size: 20px;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+#botaoCadastrar{
+    width: 160px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    background-color: #F6511D;
+}
+#userSection2{
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+    margin: auto;
+    min-height: 25em;
+}
+.cadastroCard{
+    font-size: 20px;
+    color: #4B2142;
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 0px;
+}
+.cardDiv1{
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+}
+.cardDiv2{
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+}
+.botaoEditar{
+    width: 125px;
+    height: 35px;
+    font-size: 20px;
+    color: white;
+    background: #F6511D;
+    border: 2px solid #F6511D;
+    border-radius: 20px;
+}
+.botaoExcluir{
+    margin-left: 10px;
+    width: 125px;
+    height: 35px;
+    font-size: 20px;
+    background: #41B8D2;
+    border: 2px solid #41B8D2;
+    border-radius: 20px;
+}
