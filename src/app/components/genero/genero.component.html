@@ -1,0 +1,28 @@
+<app-header></app-header>
+<main>
+    <section id="generoSection1">
+        <div id="imgTitulo">
+            <h3>Gênero</h3>
+            <img src="../../assets/Imagens/teatro.svg">
+        </div>
+        <form [formGroup]="form" (submit)="cadastrarGenero()">
+            <div>
+                <label for="cadastroGenero">Cadastrar Gênero</label>
+                <input formControlName="nome" type="text" name="nome" id="cadastroGenero">
+            </div>
+            <button type="submit" id="botaoSalvar">Salvar</button>
+        </form>
+    </section>
+    <section id="generoSection2">
+        <div *ngFor="let i of card" class="generoCard">
+            <div class="gCardDiv1">
+                <span>{{i.nome}}</span>
+            </div>
+            <div class="gCardDiv2">
+                <button class="botaoEditar" mat-raised-button (click)="editarGenero(i.id)">Editar</button>
+                <button class="botaoExcluir" (click)="removerGenero(i.id)">Excluir</button>
+            </div>
+        </div>
+    </section>
+</main>
+<app-footer></app-footer>

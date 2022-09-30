@@ -3,13 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { FilmesComponent } from './filmes/filmes.component';
-import { GeneroComponent } from './genero/genero.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { FilmesComponent } from './components/filmes/filmes.component';
+import { GeneroComponent } from './components/genero/genero.component';
+import { DialogComponent } from './components/dialog-usuario/dialog.component';
+import { DialogGeneroComponent } from './components/dialog-genero/dialog-genero.component';
+import { DialogFilmeComponent } from './components/dialog-filme/dialog-filme.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +26,18 @@ import { GeneroComponent } from './genero/genero.component';
     HomeComponent,
     UsuariosComponent,
     FilmesComponent,
-    GeneroComponent
+    GeneroComponent,
+    DialogComponent,
+    DialogGeneroComponent,
+    DialogFilmeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

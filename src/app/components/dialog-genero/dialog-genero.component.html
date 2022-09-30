@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Editar</h1>
+<div mat-dialog-actions>
+  <form [formGroup]="form" (submit)="editarGenero()">
+    <div>
+      <div>
+          <label for="nome">Nome</label>
+          <input formControlName="nome" type="text" name="nome" id="nome">
+      </div>
+  </div>
+    <button type="submit">Editar</button>
+  </form>
+    <button (click)="fecharDialog()">Cancelar</button>
+</div>

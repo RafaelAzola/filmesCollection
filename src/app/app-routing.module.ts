@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FilmesComponent } from './filmes/filmes.component';
-import { GeneroComponent } from './genero/genero.component';
-import { HomeComponent } from './home/home.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
+import { FilmesComponent } from './components/filmes/filmes.component';
+import { GeneroComponent } from './components/genero/genero.component';
+import { HomeComponent } from './components/home/home.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},

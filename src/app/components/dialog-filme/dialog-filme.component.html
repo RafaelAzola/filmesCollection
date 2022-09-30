@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Editar</h1>
+<div mat-dialog-actions>
+  <form [formGroup]="form" (submit)="editarFilme()">
+    <div>
+      <div>
+          <label for="nome">Nome</label>
+          <input formControlName="nome" type="text" name="nome" id="nome">
+      </div>
+      <select formControlName="genero" name="genero" id="genero">
+        <option *ngFor="let i of genero" value="{{i.nome}}">{{i.nome}}</option>
+      </select>
+  </div>
+    <button type="submit">Editar</button>
+  </form>
+    <button (click)="fecharDialog()">Cancelar</button>
+</div>
