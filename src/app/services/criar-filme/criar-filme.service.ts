@@ -7,8 +7,16 @@ import { Filme } from 'src/app/models/filme.model';
   providedIn: 'root'
 })
 export class CriarFilmeService {
+
+  // url do DB local
   private url = 'http://localhost:3000/filmes';
   constructor(private httpClient: HttpClient){}
+
+  // CRUD:
+  // get > lerFilme
+  // post > salvarFilme
+  // put > updateFilme
+  // delete > deletarFilme
 
   lerFilmes(): Observable<Filme[]>{
     return this.httpClient.get<Filme[]>(this.url);

@@ -7,8 +7,16 @@ import { Usuario } from 'src/app/models/usuario.model';
   providedIn: 'root'
 })
 export class CriarUsuarioService {
+
+  // url do DB local
   private url = 'http://localhost:3000/usuarios';
   constructor(private httpClient: HttpClient){}
+
+  // CRUD:
+  // get > lerUsuario
+  // post > salvarUsuario
+  // put > updateUsuario
+  // delete > deletarUsuario
 
   lerUsuarios(): Observable<Usuario[]>{
     return this.httpClient.get<Usuario[]>(this.url);

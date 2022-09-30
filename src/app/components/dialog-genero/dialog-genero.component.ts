@@ -11,6 +11,7 @@ import { CriarGeneroService } from 'src/app/services/criar-genero/criar-genero.s
 })
 export class DialogGeneroComponent implements OnInit {
 
+  // Cria um array para receber os valores de Generos
   form!: FormGroup;
   card!: Genero[];
 
@@ -23,13 +24,17 @@ export class DialogGeneroComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // Recebe valores dos inputs
     this.form = this.formBuilder.group({
       nome: new FormControl('')
     })
   }
 
   editarGenero(){
+    // Recebe o Id enviado ao abrir o dialog
     const id = this.data
+
+    // Salva os valores do array no DB
     const nome = this.form.controls["nome"].value;
     const genero: Genero = {id: id, nome: nome};
 
@@ -40,6 +45,7 @@ export class DialogGeneroComponent implements OnInit {
     })
   }
 
+  // Metodo para fechar o dialog
   fecharDialog(): void {
     this.dialogRef.close();
   }

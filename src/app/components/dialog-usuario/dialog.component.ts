@@ -11,6 +11,7 @@ import { CriarUsuarioService } from './../../services/criar-usuario/criar-usuari
 })
 export class DialogComponent implements OnInit {
 
+  // Cria um array para receber os valores de Usuarios
   form!: FormGroup;
   card!: Usuario[];
 
@@ -23,6 +24,7 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // Recebe valores dos inputs
     this.form = this.formBuilder.group({
       nome: new FormControl(''),
       email: new FormControl(''),
@@ -31,7 +33,11 @@ export class DialogComponent implements OnInit {
   }
 
   editarUsuario(){
+
+    // Recebe o Id enviado ao abrir o dialog
     const id = this.data
+
+    // Salva os valores do array no DB
     const nome = this.form.controls["nome"].value;
     const email = this.form.controls["email"].value;
     const telefone = this.form.controls["telefone"].value;
@@ -44,6 +50,7 @@ export class DialogComponent implements OnInit {
     })
   }
 
+  // Metodo para fechar o dialog
   fecharDialog(): void {
     this.dialogRef.close();
   }

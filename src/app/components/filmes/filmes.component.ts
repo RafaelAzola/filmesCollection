@@ -14,6 +14,7 @@ import { DialogFilmeComponent } from '../dialog-filme/dialog-filme.component';
 })
 export class FilmesComponent implements OnInit {
 
+  // Cria um array para receber os valores de Genero e de Filmes
   form!: FormGroup;
   card!: Filme[];
   genero!: Genero[];
@@ -27,17 +28,20 @@ export class FilmesComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // Recebe valores dos inputs
     this.form = this.formBuilder.group({
       nome: new FormControl(''),
       genero: new FormControl('')
     })
 
+    // Lê os Filmes no DB e transforma em objetos na array declarada
     this.criarFilme.lerFilmes().subscribe({
       next:(filme: Filme[]) => {
         this.card = filme
       }
     })
 
+    // Lê os Generos no DB e transforma em objetos na array declarada
     this.criarGenero.lerGeneros().subscribe({
       next:(genero: Genero[]) => {
         this.genero = genero
@@ -46,7 +50,11 @@ export class FilmesComponent implements OnInit {
   }
 
   cadastrarFilme(){
+
+    // Gera Id nova baseada na ultima Id no Db
     const id = (this.card[(this.card.length)-1].id) +1;
+
+    // Salva os valores do array no DB
     const nome = this.form.controls["nome"].value;
     const genero = this.form.controls["genero"].value;
     const filme: Filme = {id: id, nome: nome, genero: genero};
@@ -58,6 +66,7 @@ export class FilmesComponent implements OnInit {
     })
   }
 
+  // Usa o metodo delete do service
   removerFilme(id: any){
     this.criarFilme.deletarFilme(id).subscribe({
       next: () => {
@@ -66,8 +75,9 @@ export class FilmesComponent implements OnInit {
     })
   }
 
+  // Pega o Id do objeto e abre um Dialog
   editarFilme(id: any){
-    this.dialog.open(DialogFilmeComponent,{width: '400px', data:{id}})
+    this.dialog.open(DialogFilmeComponent,{data:{id}})
     this.dialog.afterAllClosed.subscribe(
       result => {
         this.ngOnInit()

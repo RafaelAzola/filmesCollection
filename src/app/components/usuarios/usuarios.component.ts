@@ -12,6 +12,7 @@ import { DialogComponent } from '../dialog-usuario/dialog.component';
 })
 export class UsuariosComponent implements OnInit {
 
+  // Cria um array para receber os valores de Usuarios
   form!: FormGroup;
   card!: Usuario[];
 
@@ -23,12 +24,14 @@ export class UsuariosComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // Recebe valores dos inputs
     this.form = this.formBuilder.group({
       nome: new FormControl(''),
       email: new FormControl(''),
       telefone: new FormControl('')
     })
 
+    // Lê os Usuarios no DB e transforma em objetos na array declarada
     this.criarUsuario.lerUsuarios().subscribe({
       next:(usuario: Usuario[]) => {
         this.card = usuario
@@ -37,7 +40,11 @@ export class UsuariosComponent implements OnInit {
   }
 
   cadastrarUsuario(){
+
+    // Gera Id nova baseada na ultima Id no Db
     const id = (this.card[(this.card.length)-1].id) +1;
+
+    // Salva os valores do array no DB
     const nome = this.form.controls["nome"].value;
     const email = this.form.controls["email"].value;
     const telefone = this.form.controls["telefone"].value;
@@ -50,6 +57,7 @@ export class UsuariosComponent implements OnInit {
     })
   }
 
+  // Usa o metodo delete do service
   removerUsuario(id: any){
     this.criarUsuario.deletarUsuario(id).subscribe({
       next: () => {
@@ -58,8 +66,9 @@ export class UsuariosComponent implements OnInit {
     })
   }
 
+  // Pega o Id do objeto e abre um Dialog
   editarUsuario(id: any){
-    this.dialog.open(DialogComponent,{width: '400px', data:{id}})
+    this.dialog.open(DialogComponent,{data:{id}})
     this.dialog.afterAllClosed.subscribe(
       result => {
         this.ngOnInit()

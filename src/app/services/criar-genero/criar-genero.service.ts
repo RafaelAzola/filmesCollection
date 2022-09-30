@@ -7,8 +7,16 @@ import { Genero } from 'src/app/models/genero.model';
   providedIn: 'root'
 })
 export class CriarGeneroService {
+
+  // url do DB local
   private url = 'http://localhost:3000/generos';
   constructor(private httpClient: HttpClient){}
+
+  // CRUD:
+  // get > lerGenero
+  // post > salvarGenero
+  // put > updateGenero
+  // delete > deletarGenero
 
   lerGeneros(): Observable<Genero[]>{
     return this.httpClient.get<Genero[]>(this.url);
