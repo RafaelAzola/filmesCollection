@@ -1,5 +1,4 @@
-Filmes Collection
-Coisas para Adicionar Posteriormente:
+Filmes Collection - Coisas para Adicionar Posteriormente:
 
 - Responsividade
 - Validação
