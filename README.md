@@ -1,0 +1,1 @@
+Este projeto de locadora utiliza tecnologias como Angular, HTML, SCSS e Typescript para registrar clientes e filmes, bem como seus respectivos gêneros. Além disso, o banco de dados utilizado é um arquivo JSON local, permitindo fácil acesso e manuseio dos dados
